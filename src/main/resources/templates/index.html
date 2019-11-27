@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <head th:replace="common/header :: common-header">
+
+    </head>
+    <body class="">
+        <div th:replace="common/header :: navbar"> </div>
+        <section id="firstsection">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="owl-one owl-carousel">
+                        <div class="item" data-wow-delay="0.3s">
+                            <img src="images/picture1.jpg" alt="Chania"  class="brandimage img-responsive"/>
+
+                        </div>
+                        <div class="item" data-wow-delay="0.6s">
+                            <img src="images/picture2.jpg" alt="Chania" class="brandimage img-responsive"/>
+
+                        </div>	
+                        <div class="item" data-wow-delay="0.9s">
+                            <img src="images/picture3.jpg" alt="Chania" class="brandimage img-responsive"/>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- End of Carousel
+   ================================================== -->
+        <div class="container-fluid">
+            <div class="home-headline"> <span>Featured Books </span> </div>
+            <hr style="margin-top:-15px;"/>
+        </div>
+
+        <div class="owl-three owl-carousel owl-theme" style=" padding-left:10%;padding-top:3%; background:url('/images/shelf.png')">
+            
+            <div class="item" data-wow-delay="0.3s">
+                <img src="images/book1.png" height="150px" width="150px" class="brand-image img-responsive" alt="mtn logo">
+            </div>
+            <div class="item" data-wow-delay="0.6s">
+                <img src="images/book1.png" height="150px" width="150px" class="brand-image img-responsive" alt="cocacola logo">
+            </div>	
+            <div class="item" data-wow-delay="0.9s">
+                <img src="images/book1.png" height="150px" width="150px" class="brand-image img-responsive" alt="heineken logo">
+            </div>
+            <div class="item" data-wow-delay="0.9s">
+                <img src="images/book1.png" height="150px" width="150px" class="brand-image img-responsive" alt="fidelity logo">
+            </div>
+            <div class="item" data-wow-delay="0.9s">
+                <img src="images/book1.png" height="150px" width="150px" class="brand-image img-responsive" />
+            </div>
+            <div class="item" data-wow-delay="0.9s">
+                <img src="images/book1.png" height="150px" width="150px" class="brand-image img-responsive" alt="fidelity logo">
+            </div>
+            <div class="item" data-wow-delay="0.9s">
+                <img src="images/book1.png" height="150px" width="150px" class="brand-image img-responsive" alt="mtn logo">
+            </div>
+            <div class="item" data-wow-delay="0.9s">
+                <img src="images/book1.png" height="150px" width="150px" class="brand-image img-responsive" alt="mtn logo">
+            </div>
+        </div>
+        <div class="row">
+            <div class ="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="/images/bestseller.png" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class ="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="/images/hours.png" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class ="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="/images/faq.png" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        <div th:replace="common/header :: body-bottom-scripts"/>
+        <script>
+            new WOW().init();
+
+            $('.owl-three').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:false,
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
+            animateOut: 'fadeOut',
+            animateIn: 'flipInY',
+            smartSpeed:450,
+            responsive:{
+            0:{
+            items:2
+            },
+            600:{
+            items:3
+            },
+            1000:{
+            items:5
+            }
+            }
+            });
+
+
+        </script>
+    </body>
+</html>

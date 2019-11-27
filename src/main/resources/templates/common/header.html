@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+  <head th:fragment="common-header">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TheBookStore</title>
+
+    	
+	<!-- Font awesome -->
+	<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+	
+	<!-- Google fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+	
+	<!-- Bootstrap CSS
+   ================================================== -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Animate CSS
+   ================================================== -->
+	<link href="css/animate.css" type="text/css" rel="stylesheet">
+	
+	<!-- Owl Carousel CSS
+   ================================================== -->
+	<link rel="stylesheet" href="css/owl.carousel.css" />
+	<link rel="stylesheet" href="css/owl.theme.default.min.css" />
+	<link rel="stylesheet" href="css/owl.transitions.css" />
+	
+	<!-- Custom CSS
+   ================================================== -->
+	<link href="css/style.css" type="text/css" rel="stylesheet">
+	
+	<!-- Favicon
+   ================================================== -->
+	<link  href="images/fav.png" type="image/png" rel="icon"/>
+   
+  </head>
+  <body>
+      <div th:fragment="navbar">
+      <!-- Navigation section
+   ================================================== -->
+	<nav class="navbar navbar-default no-margin" role="navigation">
+		  <div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">TheBookStore</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <ul class="nav navbar-nav">
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">BOOKS <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Browse the bookshelf</a></li>
+					<li><a href="#">Store hours &#38; Directions</a></li>
+					<li><a href="#">FAQ</a></li>
+				  </ul>
+				</li>
+			  </ul>
+			  <form class="navbar-form navbar-left" role="search" style="margin-top:20px">
+				<div class="form-group">
+				  <input type="text" class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			  </form>
+			  <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">LIBRARY</a></li>
+				<li><a sec:authorize="isAnonymous()" th:href="@{/login}">MY ACCOUNT</a></li>
+				<li><a sec:authorize="isAuthenticated()" th:href="@{/myProfile}">MY ACCOUNT</a></li>
+				<li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">LOG OUT</a></li>
+			  </ul>
+			</div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+        </div>
+      
+      <div th:fragment="body-bottom-scripts">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/custom.js"></script>
+	<script>
+	 new WOW().init();
+	 
+		$('.owl-one').owlCarousel({
+			loop:true,
+			margin:10,
+			nav:false,
+			autoplay:true,
+			autoplayTimeout:6000,
+			autoplayHoverPause:true,
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			smartSpeed:40,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+		
+		
+	</script>
+          
+      </div>
+  </body>
+  
+</html>
